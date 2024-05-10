@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quickalert/quickalert.dart';
 
 class LoginForm extends StatefulWidget {
@@ -18,21 +19,18 @@ class _State extends State<LoginForm> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 250, horizontal: 20),
             child: Container(
+              color: Colors.white60,
               width: 355,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  const Padding(
-                    padding: EdgeInsets.all(50),
-                  ),
+
                   const Center(
                     child: Column(
                       children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                        ),
+
                         Text(
                           'Sign in',
                           style: TextStyle(
@@ -52,7 +50,7 @@ class _State extends State<LoginForm> {
                     child: TextField(
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.orange),
+                          borderSide: BorderSide(color: Colors.black),
                         ),
                         border: OutlineInputBorder(),
                         labelText: 'Username',
@@ -78,10 +76,10 @@ class _State extends State<LoginForm> {
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(),
                         focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.orange),
+                          borderSide: BorderSide(color: Colors.black),
                         ),
                         labelText: 'Password',
-                        labelStyle: TextStyle(color: Colors.black),
+                        labelStyle: const TextStyle(color: Colors.black),
                         hintText: 'Enter Password',
                         suffixIcon: GestureDetector(
                           onTap: () {
@@ -113,7 +111,7 @@ class _State extends State<LoginForm> {
                             _rememberMe = value!;
                           });
                         },
-                        activeColor: Colors.orange, // Set the active color
+                        activeColor: Colors.lightBlueAccent, // Set the active color
                       ),
                       const Text('Remember Me'),
                     ],
@@ -125,7 +123,9 @@ class _State extends State<LoginForm> {
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(335, 60),
-                          backgroundColor: Colors.orange,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,),
+                          backgroundColor: Colors.green,
                         ),
                         child: const Text(
                           'Sign In',
@@ -148,7 +148,9 @@ class _State extends State<LoginForm> {
                   Container(
                     alignment: Alignment.centerRight, // Align to the left
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        context.go('/ForgotPassword');
+                      },
                       child: const SizedBox(
                         width: 340,
                         height: 50,
@@ -156,7 +158,7 @@ class _State extends State<LoginForm> {
                           'Forgotten your password?',
                           style: TextStyle(
                             fontSize: 15,
-                            color: Colors.orange,
+                            color: Colors.green,
                           ),
                         ),
                       ),
