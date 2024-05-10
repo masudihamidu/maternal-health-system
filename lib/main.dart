@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maternal_health_system/screens/Login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Maternal health system',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Maternal health system'),
+      home: const LoginForm(),
     );
   }
 }
