@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:maternal_health_system/screens/MaternalHomePage.dart';
 import 'package:quickalert/quickalert.dart';
 
 class LoginForm extends StatefulWidget {
@@ -116,6 +117,7 @@ class _State extends State<LoginForm> {
                       const Text('Remember Me'),
                     ],
                   ),
+
                   // Button for sign in
                   SizedBox(
                     width: 340,
@@ -133,9 +135,12 @@ class _State extends State<LoginForm> {
                             color: Colors.white,
                           ),
                         ),
-                        onPressed: () async {
+                        onPressed: ()  {
+                          context.go('/MaternalPage');
+
                           // Handle login failure, e.g., show an error message
-                          return QuickAlert.show(
+
+                           QuickAlert.show(
                               context: context,
                               type: QuickAlertType.error,
                               text: 'username or password does not match');
