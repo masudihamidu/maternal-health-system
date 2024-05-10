@@ -16,7 +16,7 @@ class _State extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.green,
       ),
       body: SingleChildScrollView(
         child: Center(

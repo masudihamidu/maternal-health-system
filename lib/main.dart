@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maternal_health_system/screens/ForgotPassword.dart';
 import 'package:maternal_health_system/screens/Login.dart';
 import 'package:go_router/go_router.dart';
+import 'package:maternal_health_system/screens/MaternalHomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,13 +12,20 @@ final _routerCnfig = GoRouter(
     routes: [
       GoRoute(
           path: '/',
-          builder: (context, state) => const LoginForm()
+        builder: (context, state) => const LoginForm(),
+
       ),
 
       GoRoute(
-          path: 'ForgotPassword',
+          path: '/ForgotPassword',
           builder: (context, state) => const ForgotPassword()
-      )
+      ),
+
+      GoRoute(
+          path: '/MaternalPage',
+          builder: (context, state) => const MaternalhomePage()
+      ),
+
 
     ]
 );
