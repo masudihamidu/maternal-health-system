@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:maternal_health_system/screens/NavBar.dart';
 
 class MaternalhomePage extends StatefulWidget{
   const MaternalhomePage({super.key});
@@ -11,6 +13,7 @@ class maternalHomePageState extends State<MaternalhomePage>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      drawer: const NavBar(),
       appBar: AppBar(
         backgroundColor: Colors.lightGreen,
       ),
@@ -22,29 +25,31 @@ class maternalHomePageState extends State<MaternalhomePage>{
         ),
       ),
 
-
-       bottomNavigationBar:  const GNav(
+       bottomNavigationBar:   GNav(
            backgroundColor: Colors.lightGreen,
            color: Colors.white,
            activeColor: Colors.white,
            tabBackgroundColor: Colors.white10,
-           gap: 8,
+           gap: 9,
             tabs: [
               GButton(
                 icon: Icons.home,
-                text: 'Home',
+                text: 'Nyumbani',
               ),
               GButton(
                 icon: Icons.medical_information,
-                text: 'Likes',
+                text: 'Chanjo',
               ),
               GButton(
-                icon: Icons.account_balance,
-                text: 'Search',
+                icon: Icons.edit_note_sharp,
+                text: 'Ushauri',
               ),
               GButton(
-                icon: Icons.account_balance_outlined,
-                text: 'Profile',
+                icon: Icons.calendar_month,
+                onPressed: (){
+                  context.go('/ClinicCard');
+                },
+                text: 'Mahudhurio',
               )
             ]
         )
