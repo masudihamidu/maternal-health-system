@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maternal_health_system/screens/ClinicCard.dart';
 import 'package:maternal_health_system/screens/ForgotPassword.dart';
 import 'package:maternal_health_system/screens/Login.dart';
 import 'package:go_router/go_router.dart';
@@ -23,7 +24,13 @@ final _routerCnfig = GoRouter(
 
       GoRoute(
           path: '/MaternalPage',
-          builder: (context, state) => const MaternalhomePage()
+          builder: (context, state) => const MaternalhomePage(),
+
+      ),
+
+      GoRoute(
+          path: '/ClinicCard',
+          builder: (context, state) => const ClinicCard()
       ),
 
 
