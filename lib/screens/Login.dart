@@ -11,7 +11,6 @@ class LoginForm extends StatefulWidget {
 }
 
 class _State extends State<LoginForm> {
-  bool _rememberMe = false;
   bool _obscurePassword = true;
 
   @override
@@ -22,8 +21,8 @@ class _State extends State<LoginForm> {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 250, horizontal: 20),
             child: Container(
-              color: Colors.white60,
-              width: 355,
+              color: Colors.white,
+              width: 350,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -31,32 +30,40 @@ class _State extends State<LoginForm> {
                   const Center(
                     child: Column(
                       children: [
-
-                        Text(
-                          'Sign in',
-                          style: TextStyle(
-                            fontSize: 23,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        const Padding(
+                          padding: EdgeInsets.all(15),
                         ),
+
+                       Column(
+                         children: [
+                           Icon(Icons.account_circle, size: 60,),
+                           Text(
+                             'Ingia',
+                             style: TextStyle(
+                               fontSize: 23,
+                               fontWeight: FontWeight.bold,
+                             ),
+                           ),
+                         ],
+                       )
                       ],
                     ),
                   ),
+
                   const Padding(
                     padding: EdgeInsets.all(15),
                   ),
+
                   const SizedBox(
-                    width: 340,
-                    height: 50,
+                    width: 290,
+                    height: 45,
                     child: TextField(
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
                         ),
                         border: OutlineInputBorder(),
-                        labelText: 'Username',
-                        labelStyle: TextStyle(color: Colors.black),
-                        hintText: 'Enter username',
+                        hintText: 'Ingiza jina lako',
                         suffixIcon: Icon(
                           Icons.person,
                           color: Colors.grey,
@@ -70,8 +77,8 @@ class _State extends State<LoginForm> {
                   ),
 
                   SizedBox(
-                    width: 340,
-                    height: 50,
+                    width: 290,
+                    height: 45,
                     child: TextField(
                       obscureText: _obscurePassword,
                       decoration: InputDecoration(
@@ -79,9 +86,7 @@ class _State extends State<LoginForm> {
                         focusedBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
                         ),
-                        labelText: 'Password',
-                        labelStyle: const TextStyle(color: Colors.black),
-                        hintText: 'Enter Password',
+                        hintText: 'Ingiza nenosiri',
                         suffixIcon: GestureDetector(
                           onTap: () {
                             setState(() {
@@ -100,28 +105,13 @@ class _State extends State<LoginForm> {
                   ),
 
                   const Padding(
-                    padding: EdgeInsets.all(8.0),
-                  ),
-
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: _rememberMe,
-                        onChanged: (value) {
-                          setState(() {
-                            _rememberMe = value!;
-                          });
-                        },
-                        activeColor: Colors.lightBlueAccent, // Set the active color
-                      ),
-                      const Text('Remember Me'),
-                    ],
+                    padding: EdgeInsets.all(13.0),
                   ),
 
                   // Button for sign in
                   SizedBox(
-                    width: 340,
-                    height: 60,
+                    width: 290,
+                    height: 50,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(335, 60),
@@ -130,7 +120,7 @@ class _State extends State<LoginForm> {
                           backgroundColor: Colors.green,
                         ),
                         child: const Text(
-                          'Sign In',
+                          'Ingia',
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -143,7 +133,7 @@ class _State extends State<LoginForm> {
                            QuickAlert.show(
                               context: context,
                               type: QuickAlertType.error,
-                              text: 'username or password does not match');
+                              text: 'jina la mtumiaji au nenosiri halilingani');
                         }),
                   ),
                   const Padding(
@@ -157,10 +147,10 @@ class _State extends State<LoginForm> {
                         context.go('/ForgotPassword');
                       },
                       child: const SizedBox(
-                        width: 340,
-                        height: 50,
+                        width: 320,
+                        height: 45,
                         child: Text(
-                          'Forgotten your password?',
+                          'Umesahau nenosiri?',
                           style: TextStyle(
                             fontSize: 15,
                             color: Colors.green,
