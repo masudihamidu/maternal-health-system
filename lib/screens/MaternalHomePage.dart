@@ -1,59 +1,81 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:maternal_health_system/screens/NavBar.dart';
+import 'NavBar.dart';
 
-class MaternalhomePage extends StatefulWidget{
-  const MaternalhomePage({super.key});
+class MaternalhomePage extends StatefulWidget {
+  const MaternalhomePage({Key? key}) : super(key: key);
+
   @override
   maternalHomePageState createState() => maternalHomePageState();
-
 }
-class maternalHomePageState extends State<MaternalhomePage>{
+
+class maternalHomePageState extends State<MaternalhomePage> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavBar(),
       appBar: AppBar(
         backgroundColor: Colors.lightGreen,
       ),
-      body: Container(
-        child: Column(
-          children: [
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(7),
+          ),
+          Text("Dashibodi" , style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(10),
+          ),
 
-          ],
-        ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              children: List.generate(
+                2, // Number of grid items
+                    (index) => Container(
+                  margin: EdgeInsets.all(8),
+                  color: Colors.green,
+                  child: Center(
+                    child: Text('Chanjo $index'),
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+        ],
       ),
-
-       bottomNavigationBar:   GNav(
-           backgroundColor: Colors.lightGreen,
-           color: Colors.white,
-           activeColor: Colors.white,
-           tabBackgroundColor: Colors.white10,
-           gap: 9,
-            tabs: [
-              GButton(
-                icon: Icons.home,
-                text: 'Nyumbani',
-              ),
-              GButton(
-                icon: Icons.medical_information,
-                text: 'Chanjo',
-              ),
-              GButton(
-                icon: Icons.edit_note_sharp,
-                text: 'Ushauri',
-              ),
-              GButton(
-                icon: Icons.calendar_month,
-                onPressed: (){
-                  context.go('/ClinicCard');
-                },
-                text: 'Mahudhurio',
-              )
-            ]
-        )
-
+      bottomNavigationBar: GNav(
+        backgroundColor: Colors.lightGreen,
+        color: Colors.white,
+        activeColor: Colors.white,
+        tabBackgroundColor: Colors.white10,
+        gap: 9,
+        tabs: [
+          GButton(
+            icon: Icons.home,
+            text: 'Nyumbani',
+          ),
+          GButton(
+            icon: Icons.medical_information,
+            text: 'Chanjo',
+          ),
+          GButton(
+            icon: Icons.edit_note_sharp,
+            text: 'Ushauri',
+          ),
+          GButton(
+            icon: Icons.calendar_month,
+            onPressed: () {
+              context.go('/ClinicCard');
+            },
+            text: 'Mahudhurio',
+          )
+        ],
+      ),
     );
   }
 }
