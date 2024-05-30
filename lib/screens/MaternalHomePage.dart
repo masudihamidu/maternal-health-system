@@ -24,22 +24,22 @@ class maternalHomePageState extends State<MaternalhomePage> {
           const Padding(
             padding: EdgeInsets.all(7),
           ),
-          Text("Dashibodi" , style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
+          // const Text("Dashibodi" , style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          // ),
           const Padding(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(7),
           ),
 
           Expanded(
             child: GridView.count(
-              crossAxisCount: 2,
+              crossAxisCount: 3,
               children: List.generate(
-                2, // Number of grid items
+                3, // Number of grid items
                     (index) => Container(
                   margin: EdgeInsets.all(8),
                   color: Colors.green,
                   child: Center(
-                    child: Text('Chanjo $index'),
+                    child: Text('Taarifa $index'),
                   ),
                 ),
               ),
@@ -55,15 +55,19 @@ class maternalHomePageState extends State<MaternalhomePage> {
         tabBackgroundColor: Colors.white10,
         gap: 9,
         tabs: [
-          GButton(
+          const GButton(
             icon: Icons.home,
             text: 'Nyumbani',
           ),
-          GButton(
-            icon: Icons.medical_information,
-            text: 'Chanjo',
+           GButton(
+            icon: Icons.question_answer,
+            onPressed: () {
+              context.go('/QuestionAnswers');
+            },
+            text: 'Msaada',
           ),
-          GButton(
+
+          const GButton(
             icon: Icons.edit_note_sharp,
             text: 'Ushauri',
           ),

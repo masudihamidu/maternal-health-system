@@ -60,14 +60,16 @@ class maternalHomePageState extends State<ClinicCard>{
               GButton(
                 onPressed: (){
                   context.go('/MaternalPage');
-
                 },
                 icon: Icons.home,
                 text: 'Nyumbani',
               ),
               GButton(
-                icon: Icons.medical_information,
-                text: 'Chanjo',
+                icon: Icons.question_answer,
+                onPressed: () {
+                  context.go('/QuestionAnswers');
+                },
+                text: 'Msaada',
               ),
               GButton(
                 icon: Icons.edit_note_sharp,
