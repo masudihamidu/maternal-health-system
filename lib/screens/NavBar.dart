@@ -31,6 +31,7 @@ class NavBar extends StatelessWidget {
 
             GestureDetector(
               onTap: (){
+                context.go('/MaternalPage');
               },
               child: buildMenuItem(
                 text: 'Nyumbani',
@@ -41,10 +42,11 @@ class NavBar extends StatelessWidget {
 
             GestureDetector(
               onTap: (){
+                  context.go('/QuestionAnswers');
               },
               child: buildMenuItem(
-                text: 'Chanjo',
-                icon: Icons.medical_information,
+                text: ' Msaada',
+                icon: Icons.question_answer,
               ),
             ),
 
@@ -53,7 +55,7 @@ class NavBar extends StatelessWidget {
               },
               child: buildMenuItem(
                 text: 'Ushauri',
-                icon: Icons.edit_note_sharp,
+                icon: Icons.edit_note,
               ),
             ),
 
