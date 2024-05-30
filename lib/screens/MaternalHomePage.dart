@@ -18,35 +18,74 @@ class maternalHomePageState extends State<MaternalhomePage> {
       appBar: AppBar(
         backgroundColor: Colors.lightGreen,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(7),
-          ),
-          // const Text("Dashibodi" , style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          // ),
-          const Padding(
-            padding: EdgeInsets.all(7),
-          ),
-
-          Expanded(
-            child: GridView.count(
-              crossAxisCount: 3,
-              children: List.generate(
-                3, // Number of grid items
-                    (index) => Container(
-                  margin: EdgeInsets.all(8),
-                  color: Colors.green,
-                  child: Center(
-                    child: Text('Taarifa $index'),
-                  ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Text(
+                'Karibu, [Name]',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 16),
+              Card(
+                child: ListTile(
+                  title: const Text('Ukuaji wa ujauzito'),
+                  subtitle: const Text('Wiki ya 24: Mtoto wako anaendelea vizuri'),
+                  trailing: Icon(Icons.more_vert),
+                  onTap: () {
+                    // Navigate to pregnancy tracker details
+                  },
                 ),
               ),
-            ),
-          ),
+              const SizedBox(height: 16),
+              Card(
+                child: ListTile(
+                  title: const Text('Vidokezo vya Kila Siku na Makala'),
+                  subtitle: const Text('Jinsi ya kukabiliana na ugonjwa'),
+                  trailing: Icon(Icons.more_vert),
+                  onTap: () {
+                    // Navigate to articles section
+                  },
+                ),
+              ),
+              const SizedBox(height: 16),
+              Card(
+                child: ListTile(
+                  title: const Text('Udhurio lijalo'),
+                  subtitle: const Text('Ijayo: Ultrasound 5/6/2024'),
+                  trailing: Icon(Icons.more_vert),
+                  onTap: () {
+                    // Navigate to appointments section
+                  },
+                ),
+              ),
 
-        ],
+              const SizedBox(height: 16),
+              Card(
+                child: ListTile(
+                  title: const Text('Afya na ushauri'),
+                  trailing: Icon(Icons.more_vert),
+                  onTap: () {
+                    // Navigate to health and fitness section
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 16),
+              Card(
+                child: ListTile(
+                  title: const Text('Huduma ya dharura'),
+                  trailing: Icon(Icons.more_vert),
+                  onTap: () {
+                    // Navigate to emergency contacts
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       bottomNavigationBar: GNav(
         backgroundColor: Colors.lightGreen,
@@ -59,14 +98,13 @@ class maternalHomePageState extends State<MaternalhomePage> {
             icon: Icons.home,
             text: 'Nyumbani',
           ),
-           GButton(
+          GButton(
             icon: Icons.question_answer,
             onPressed: () {
               context.go('/QuestionAnswers');
             },
             text: 'Msaada',
           ),
-
           const GButton(
             icon: Icons.edit_note_sharp,
             text: 'Ushauri',
