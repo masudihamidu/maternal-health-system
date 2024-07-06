@@ -18,7 +18,7 @@ class maternalHomePageState extends State<Questions> {
     if (_controller.text.isNotEmpty) {
       setState(() {
         messages.add({'sender': 'patient', 'text': _controller.text});
-        messages.add({'sender': 'system', 'text': 'Nenda hospitali iliyo karibu nawe ukaonane na mtaalamu wa afya.'}); // Mock system response
+        messages.add({'sender': 'system', 'text': 'Nenda hospitali iliyo karibu 5nawe ukaonane na mtaalamu wa afya.'}); // Mock system response
       });
       _controller.clear();
     }

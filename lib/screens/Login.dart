@@ -146,6 +146,7 @@ class _State extends State<LoginForm> {
                       onTap: () {
                         context.go('/ForgotPassword');
                       },
+
                       child: const SizedBox(
                         width: 320,
                         height: 45,
